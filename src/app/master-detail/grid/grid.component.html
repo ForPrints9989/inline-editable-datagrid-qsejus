@@ -1,12 +1,28 @@
 <div class="top">
   
   <div class="clr-select-wrapper label-and-form-field">
-    <label for="country" class="clr-control-label">Showing SKUs for country:</label>
+    <label for="country" class="clr-control-label">Select the platform:</label>
     <select id="country" name="country" class="clr-select">
-      <option value="1">Bulgaria</option>
-      <option value="2">USA</option>
-      <option value="3">Japan</option>
+      <option value="1">Linux</option>
+      <option value="2">Windows</option>
+      <option value="3">Ms SQL</option>
     </select>
+  </div>
+
+   <div class="clr-select-wrapper label-and-form-field">
+    <label for="country" class="clr-control-label">Select the Type of account</label>
+    <select id="country" name="country" class="clr-select">
+      <option value="1">PA</option>
+      <option value="2">NPA</option>
+    </select>
+  </div>
+  <br>
+  <br>
+
+  <div class="clr-select-wrapper label-and-form-field">
+    <button ng-click="addBusinessRoles()">ADD  A BUSINESS ROLE</button>
+    <button ng-click="addTehnicalRoles()">ADD  A TECHNICAL ROLE</button>
+  
   </div>
 
 </div>
@@ -16,12 +32,12 @@
 
       <!-- [clDgRowSelection]="true" -->
       <clr-datagrid class="inline-editable">
-        <clr-dg-column>SKU Name</clr-dg-column>
-        <clr-dg-column>SKU Type</clr-dg-column>
-        <clr-dg-column>Portfolio Tag</clr-dg-column>
-        <clr-dg-column>Product</clr-dg-column>
-        <clr-dg-column>Solution Elements</clr-dg-column>
-        <clr-dg-column>Related Services</clr-dg-column>
+        <clr-dg-column>Business Roles / Technical Roles</clr-dg-column>
+        <clr-dg-column>Technical Role 1</clr-dg-column>
+        <clr-dg-column>Technical Role 2</clr-dg-column>
+        <clr-dg-column>Technical Role 3</clr-dg-column>
+        <clr-dg-column>Technical Role 4</clr-dg-column>
+        <clr-dg-column>Technical Role 5</clr-dg-column>
 
         <clr-dg-row *clrDgItems="let item of items" [clrDgItem]="item">
 

@@ -73,7 +73,7 @@ export class GridComponent implements OnInit {
     ];
     this.items = [
       {
-        skuName: 'TAM-TIER-1',
+        skuName: 'Business Role 1',
         skuType: 'TAM-TIER-1',
         portfolioTag: 'Education',
         product: 'vSphere 6.5',
@@ -83,7 +83,7 @@ export class GridComponent implements OnInit {
         ]
       },
       {
-        skuName: 'TAM-TIER-1',
+        skuName: 'Business Role 2',
         skuType: 'TAM-TIER-1',
         portfolioTag: 'SDDC - Migration',
         product: 'vSphere 6',
@@ -95,7 +95,7 @@ export class GridComponent implements OnInit {
         ]
       },
       {
-        skuName: 'TAM-TIER-1',
+        skuName: 'Business Role 3',
         skuType: 'TAM-TIER-1',
         portfolioTag: 'Managed Services',
         product: 'vSphere 6.5',
@@ -106,7 +106,7 @@ export class GridComponent implements OnInit {
         ]
       },
       {
-        skuName: 'TAM-TIER-1',
+        skuName: 'Business Role 4',
         skuType: 'TAM-TIER-1',
         portfolioTag: 'Advisory Services',
         product: 'vSphere 6',
@@ -169,6 +169,10 @@ export class GridComponent implements OnInit {
       console.log('go save.. ' + this.edittedItem.name);
     }
     this.edittedItem = this.selectedItem;
+  }
+
+  addBusinessRoles() {
+    console.log('I am about to ad business role');
   }
 
 }
