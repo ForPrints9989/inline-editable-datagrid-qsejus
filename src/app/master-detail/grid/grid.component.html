@@ -1,0 +1,89 @@
+<div class="top">
+  
+  <div class="clr-select-wrapper label-and-form-field">
+    <label for="country" class="clr-control-label">Showing SKUs for country:</label>
+    <select id="country" name="country" class="clr-select">
+      <option value="1">Bulgaria</option>
+      <option value="2">USA</option>
+      <option value="3">Japan</option>
+    </select>
+  </div>
+
+</div>
+<div class="grid">
+  <div class="relative-parent">
+    <div class="absolute-parent">
+
+      <!-- [clDgRowSelection]="true" -->
+      <clr-datagrid class="inline-editable">
+        <clr-dg-column>SKU Name</clr-dg-column>
+        <clr-dg-column>SKU Type</clr-dg-column>
+        <clr-dg-column>Portfolio Tag</clr-dg-column>
+        <clr-dg-column>Product</clr-dg-column>
+        <clr-dg-column>Solution Elements</clr-dg-column>
+        <clr-dg-column>Related Services</clr-dg-column>
+
+        <clr-dg-row *clrDgItems="let item of items" [clrDgItem]="item">
+
+          <ng-container>
+            <div class="inline-edit-btns">
+              <a href="javascript:void(0)" class="inline-btn"
+                (click)=" editRow === item ? editRow = null : editRow = item ">
+                <ng-template [ngIf]=" editRow !== item ">
+                  <clr-icon shape="pencil"></clr-icon>
+                </ng-template>
+                <ng-template [ngIf]=" editRow === item ">
+                  <clr-icon shape="times"></clr-icon>
+                </ng-template>
+              </a>              
+            </div>
+          </ng-container>
+
+          <clr-dg-cell>{{ item.skuName }}</clr-dg-cell>
+          <clr-dg-cell>{{ item.skuType }}</clr-dg-cell>
+          <clr-dg-cell>{{ item.portfolioTag }}</clr-dg-cell>
+          <clr-dg-cell>{{ item.product }}</clr-dg-cell>
+
+          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
+            <ng-template [ngIf]=" editRow !== item ">
+              <ul>
+                <li *ngFor="let seitem of item.se">
+                  {{ seitem.name }}
+                </li>
+              </ul>
+            </ng-template>
+            <ng-template [ngIf]=" editRow === item ">
+              <ng-select 
+                [items]=" solutionElements "
+                [multiple]="true"
+                bindLabel="name"
+                [(ngModel)]=" items.se "></ng-select>
+            </ng-template>
+          </clr-dg-cell>
+
+          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
+            <ng-template [ngIf]=" editRow !== item ">
+              <ul>
+                <li *ngFor="let seitem of item.ms">
+                  {{ seitem.name }}
+                </li>
+              </ul>
+            </ng-template>
+            <ng-template [ngIf]=" editRow === item ">
+              <ng-template [ngIf]=" item.ms ">
+                <ng-select 
+                  [items]=" skus "
+                  [multiple]="true"
+                  bindLabel="name"
+                  bindValue="name"
+                  groupBy="connected"
+                  [(ngModel)]=" items.ms "></ng-select>
+              </ng-template>
+            </ng-template>
+          </clr-dg-cell>
+
+        </clr-dg-row>
+      </clr-datagrid>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,174 @@
+:host {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-row-gap: .5rem;
+  height: 100%;
+  // border: 1px solid lime;
+}
+::ng-deep {
+
+
+
+  .ng-select .ng-clear-wrapper,
+  .ng-select .ng-arrow-wrapper {
+    margin-top: .2rem !important;
+  }
+
+  .ng-select .ng-select-container {
+    align-items: flex-start !important;
+  }
+
+  .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+    white-space: normal !important;
+    display: inline-flex;
+    align-items: center;
+  }
+
+
+
+  .relative-parent {
+    position: relative;
+    display: block;
+    height: 100%;
+    // border: 3px solid blue;
+    // flex: 1 1 auto;
+    .absolute-parent {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      // border: 3px solid blue;
+      
+      clr-datagrid {
+        &.datagrid-host {
+          padding-top: 0;
+          .datagrid {
+            margin-top: 0 !important;
+          }
+        }
+        width: 100%;
+        height: 100%;
+        .datagrid-overlay-wrapper {
+          // min-height: calc( 100% - 24px ); // 24px is the actions bar height
+          min-height: 100%;
+          .datagrid {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .label-and-form-field {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    label {
+      margin-right: .5rem;
+    }
+  }
+
+  
+  .form-fields {
+    width: 50%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-row-gap: .5rem;
+    .label-and-form-field {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  .clr-select-wrapper,
+  .clr-input-wrapper {
+    select,
+    input[type=text] {
+      width: 100%;
+    }
+  }
+
+  .datagrid-row-clickable {
+    display: block !important;
+  }
+
+
+  // .alignright {
+  //   text-align: right !important;
+  // }
+  // .datagrid .datagrid-column.alignright {
+  //   .datagrid-column-title {
+  //     text-align: right !important;
+  //   }
+  //   clr-dg-string-filter {
+  //     order: 1 !important;
+  //   }
+  //   .datagrid-column-title {
+  //     order: 2 !important;
+  //   }
+  // }
+
+  .inline-editable {
+    .datagrid .datagrid-cell {
+      min-height: 2rem;
+      padding-top: .7rem;
+    }
+    .datagrid .datagrid-cell:last-child, 
+    .datagrid .datagrid-column:last-child, 
+    .datagrid .datagrid-head:last-child {
+      // padding-right: 3rem !important;
+    }
+    .datagrid .edit-cell.datagrid-cell {
+      padding: 1px .25rem 0 .25rem;
+      display: inline-flex;
+      // align-items: center;
+      align-items: start;
+      justify-content: stretch;
+      .clr-select-wrapper,
+      .clr-input-wrapper {
+        width: 100%;
+      }
+      &:last-child {
+        .clr-select-wrapper,
+        .clr-input-wrapper {
+          width: calc( 100% - 2.5rem );
+        }
+      }
+    }
+  }
+
+  .datagrid .datagrid-body .datagrid-row {
+    
+    position: relative;
+    
+    .inline-edit-btns {
+      
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      padding: 0 .3rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .inline-btn {
+        margin: 0 0 0 .3rem;
+        padding: 0 .3rem;
+      }
+    }
+    &:hover {
+      // border-color: orange !important;
+    }
+
+    &:not(:hover) {
+      
+      .inline-edit-btns {
+        display: none;
+      }
+    }
+  }
+
+
+
+
+}
