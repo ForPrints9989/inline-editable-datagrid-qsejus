@@ -60,63 +60,64 @@ export class GridComponent implements OnInit {
     ];
 
     this.solutionElements = [
-      { name: 'Design a virtual infrastructure foundation' },
-      { name: 'Enable automated ticket creation in external ITSM' },
-      { name: 'Leverage an external configuration management system' },
-      { name: 'Leverage network virtualization in blueprints' },
-      { name: 'Leverage operations management with network virtualization' },
-      { name: 'Leverage cloud automation to add database instances' },
-      { name: 'Deploy lifecycle management for cloud automation platform' },
-      { name: 'Enhance existing problem management processes' },
-      { name: 'Develop and implement a service level management template' },
-      { name: 'Develop and implement a service level management process ' }
+      { name: 'Business Role 1' },
+      { name: 'Business Role 2' },
+      { name: 'Business Role 3' },
+      { name: 'Business Role 4' },
+      { name: 'Business Role 5' },
+      { name: 'Business Role 6' },
+      { name: 'Business Role 7' },
+      { name: 'Business Role 8' },
+      { name: 'Business Role 9' },
+      { name: 'Business Role 10' }
     ];
     this.items = [
       {
         skuName: 'Business Role 1',
-        skuType: 'TAM-TIER-1',
-        portfolioTag: 'Education',
-        product: 'vSphere 6.5',
-        ms: [],
+        skuType: false,
+        portfolioTag: true,
+        product: false,
+        ms: [
+          false
+        ],
         se: [
-          { name: 'Design a virtual infrastructure foundation' }
+          { name: 'Business Role 1' }
         ]
       },
       {
         skuName: 'Business Role 2',
-        skuType: 'TAM-TIER-1',
-        portfolioTag: 'SDDC - Migration',
-        product: 'vSphere 6',
+         skuType: true,
+        portfolioTag: false,
+        product: false,
         ms: [
-          { name: 'Integrate vRA with F5 for LBaaS', connected: 'Connected' }
+          true
         ],
         se: [
-          { name: 'Leverage network virtualization in blueprints' }
+          { name: 'Business Role 2' }
         ]
       },
       {
         skuName: 'Business Role 3',
-        skuType: 'TAM-TIER-1',
-        portfolioTag: 'Managed Services',
-        product: 'vSphere 6.5',
-        ms: [],
+        skuType: true,
+        portfolioTag: true,
+        product: true,
+        ms: [
+          true
+        ],
         se: [
-          { name: 'Design a virtual infrastructure foundation' }, 
-          { name: 'Leverage network virtualization in blueprints' }
+          { name: 'Business Role 3' }
         ]
       },
       {
         skuName: 'Business Role 4',
-        skuType: 'TAM-TIER-1',
-        portfolioTag: 'Advisory Services',
-        product: 'vSphere 6',
+        skuType: false,
+        portfolioTag: false,
+        product: false,
         ms: [
-          { name: 'Integrate vRA with Microsoft DNS', connected: 'Connected' }, 
-          { name: 'Integrate vRA with F5 for LBaaS', connected: 'Connected' },
-          { name: 'Integrate vRA with ServiceNow Ticketing', connected: 'Connected' }
+          true
         ],
         se: [
-          { name: 'Enable automated ticket creation in external ITSM' }
+          { name: 'Business Role 4' }
         ]
       },
 
@@ -172,7 +173,7 @@ export class GridComponent implements OnInit {
   }
 
   addBusinessRoles() {
-    console.log('I am about to ad business role');
+    console.log('I am about to add business role');
   }
 
 }

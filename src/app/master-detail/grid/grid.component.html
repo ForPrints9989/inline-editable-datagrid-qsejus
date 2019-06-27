@@ -55,45 +55,60 @@
             </div>
           </ng-container>
 
-          <clr-dg-cell>{{ item.skuName }}</clr-dg-cell>
-          <clr-dg-cell>{{ item.skuType }}</clr-dg-cell>
-          <clr-dg-cell>{{ item.portfolioTag }}</clr-dg-cell>
-          <clr-dg-cell>{{ item.product }}</clr-dg-cell>
-
-          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
-            <ng-template [ngIf]=" editRow !== item ">
-              <ul>
-                <li *ngFor="let seitem of item.se">
+          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' "><ng-template [ngIf]=" editRow !== item ">
+              <p *ngFor="let seitem of item.se">
                   {{ seitem.name }}
-                </li>
-              </ul>
+                </p>
             </ng-template>
             <ng-template [ngIf]=" editRow === item ">
               <ng-select 
                 [items]=" solutionElements "
-                [multiple]="true"
+                [multiple]="false"
                 bindLabel="name"
-                [(ngModel)]=" items.se "></ng-select>
+                [(ngModel)]=" item.skuName "></ng-select>
+            </ng-template></clr-dg-cell>
+          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
+            <ng-template [ngIf]=" editRow !== item ">
+               {{ item.skuType }}
+            </ng-template>
+            <ng-template [ngIf]=" editRow === item ">
+              <label><input type="checkbox" [(ngModel)]=" items.skuType "></label><br/>
+            </ng-template>
+          </clr-dg-cell>
+          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
+            <ng-template [ngIf]=" editRow !== item ">
+               {{ item.portfolioTag }}
+            </ng-template>
+            <ng-template [ngIf]=" editRow === item ">
+              <label><input type="checkbox" [(ngModel)]=" items.portfolioTag "></label><br/>
+            </ng-template>
+            </clr-dg-cell>
+          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
+             <ng-template [ngIf]=" editRow !== item ">
+               {{ item.product }}
+            </ng-template>
+            <ng-template [ngIf]=" editRow === item ">
+              <label><input type="checkbox" [(ngModel)]=" items.product "></label><br/>
             </ng-template>
           </clr-dg-cell>
 
           <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
             <ng-template [ngIf]=" editRow !== item ">
-              <ul>
-                <li *ngFor="let seitem of item.ms">
-                  {{ seitem.name }}
-                </li>
-              </ul>
+              {{ item.product }}
+            </ng-template>
+            <ng-template [ngIf]=" editRow === item ">
+              <label><input type="checkbox" [(ngModel)]=" items.product "></label><br/>
+            </ng-template>
+          </clr-dg-cell>
+
+          <clr-dg-cell [ngClass]=" editRow === item ? 'edit-cell' : '' ">
+            <ng-template [ngIf]=" editRow !== item ">
+            {{ item.product }}
             </ng-template>
             <ng-template [ngIf]=" editRow === item ">
               <ng-template [ngIf]=" item.ms ">
-                <ng-select 
-                  [items]=" skus "
-                  [multiple]="true"
-                  bindLabel="name"
-                  bindValue="name"
-                  groupBy="connected"
-                  [(ngModel)]=" items.ms "></ng-select>
+  
+                  <label><input type="checkbox" [(ngModel)]=" items.product "></label><br/>
               </ng-template>
             </ng-template>
           </clr-dg-cell>
